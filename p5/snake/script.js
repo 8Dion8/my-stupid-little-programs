@@ -59,6 +59,7 @@ function draw() {
         text(score, 650, 300);
         fill(255);
 
+        if (0 < snek.head[0] < 1380 || 0 < snek.head[1] < 810) { running = false; }
     }
 }
 
