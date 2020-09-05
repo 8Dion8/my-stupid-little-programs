@@ -36,7 +36,7 @@ function draw() {
 
         fod.show();
 
-        if (0 < snek.head[0] < 1380 || 0 < snek.head[1] < 810 || )
+        if (0 < snek.head[0] < 1380 || 0 < snek.head[1] < 810) { running = false; }
     }
 }
 
