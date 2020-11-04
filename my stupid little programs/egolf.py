@@ -1,0 +1,1 @@
+f=lambda s:abs(eval("".join([['+'if e[i-1]>e[i+1]else'-'][0]if e[i+1]!='8'else''][0]if e[i]=='8'else e[i]for i in range(len(e))if(e:=str(s))else'')))
