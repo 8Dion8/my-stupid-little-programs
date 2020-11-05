@@ -106,7 +106,9 @@ class Grid {
             }
         }
         this.reveal = function(x, y) {
-
+            if (this.grid[x][y]) {
+                this.finish_game(false);
+            }
             this.zero_grid[x][y] = 1;
             if (this.get_neighbors(x, y)[0] == 0) {
                 console.log(x, y);
@@ -181,5 +183,18 @@ class Grid {
                 }
             } catch (error) {}
         };
+
+        this.finish_game = function(gameWon) {
+            this.show = function() {
+                textSize(100);
+                if (gameWon) {
+                    text('You won!', window.screen.width / 2, window.screen.height / 2);
+                } else {
+                    text('You lost!', window.screen.width / 2, window.screen.height / 2);
+                }
+            }
+        }
     }
+
+
 }

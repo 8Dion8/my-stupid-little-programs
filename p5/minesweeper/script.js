@@ -2,26 +2,23 @@ document.oncontextmenu = function() { return false; }
 
 const height_ = 10;
 const width_ = 20;
-const size_ = 1200 / width_;
+const size_ = window.screen.height / height_;
 var rightPressed = false;
 
 function setup() {
-    cnv = createCanvas(1200, 600);
+    cnv = createCanvas(window.screen.width, window.screen.height);
     cells = new Grid(width_, height_);
-    textSize(1200 / width_);
+    textSize(window.screen.width / width_);
     stroke(255);
 }
 
 function draw() {
     background(0);
     cells.show();
-
-
 }
 
 function mouse_pressed() {
     console.log(mouseButton);
-
 }
 
 function mouseReleased() {
