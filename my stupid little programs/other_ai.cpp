@@ -59,7 +59,7 @@ int minimax(string grid, int depth, bool isMaximizing) {
                 grid[i] = 'O';
                 int score = minimax(grid,depth+1,false);
                 grid[i] = to_string(i);
-                best_score = max(score, best_score)
+                best_score = max(score, best_score);
             }
         }
         return best_score;
@@ -70,7 +70,7 @@ int minimax(string grid, int depth, bool isMaximizing) {
                 grid[i] = 'X';
                 int score = minimax(grid,depth+1,true);
                 grid[i] = to_string(i);
-                best_score = min(score, best_score)
+                best_score = min(score, best_score);
             }
         }
         return best_score;
@@ -80,6 +80,7 @@ int minimax(string grid, int depth, bool isMaximizing) {
 int get_best_move(string grid) {
     int best_score = -100;
     int score;
+    int best_move;
     for (int i = 0; i < 25; ++i) {
         if (grid[i] != 'X' and grid[i] != 'O') {
             grid[i] = 'O';
@@ -87,7 +88,7 @@ int get_best_move(string grid) {
             grid[i] = i;
             if (score > best_score) {
                 best_score = score;
-                int best_move = i;
+                best_move = i;
             }
         }
     }
